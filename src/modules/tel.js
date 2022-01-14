@@ -5,7 +5,6 @@ const tel = () => {
     let change = true
 
     arrow.addEventListener('click', (e) => {
-        console.dir(e.target);
         if (change) {
             divPhone.style.position = 'relative'
             phone.style.webkitTransition = '0.5s'
