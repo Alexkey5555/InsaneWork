@@ -15,6 +15,7 @@ const menu = () => {
         else if (e.target.closest('.close-menu') || !e.target.closest('.row')) {
             menu.removeAttribute('style')
         }
+
         menuItem.forEach(item => {
             if (e.target === item) {
                 e.preventDefault()
