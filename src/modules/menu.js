@@ -1,8 +1,8 @@
 const menu = () => {
     const menu = document.querySelector('.popup-dialog-menu')
     const menuItem = document.querySelectorAll('.popup-menu-nav__item>a')
-
-
+    const menuAllService = document.querySelectorAll('.allservice')
+    const allServiceModal = document.querySelector('.popup-repair-types')
 
 
     document.addEventListener('click', (e) => {
@@ -32,6 +32,17 @@ const menu = () => {
                 behavior: 'smooth'
             });
         }
+        if (e.target.closest('div>.mobile-hide')) {
+            allServiceModal.removeAttribute('style')
+        }
+        menuAllService.forEach(item => {
+            if (e.target === item) {
+                e.preventDefault()
+                allServiceModal.style.zIndex = '99999'
+                allServiceModal.style.visibility = 'visible'
+                menu.removeAttribute('style')
+            }
+        })
     })
 }
 export default menu
