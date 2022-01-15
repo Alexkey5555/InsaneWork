@@ -16,7 +16,17 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_tel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tel */ \"./modules/tel.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n\n\n\n\n\n(0,_modules_tel__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_tel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tel */ \"./modules/tel.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n/* harmony import */ var _modules_maskPhone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/maskPhone */ \"./modules/maskPhone.js\");\n\n\n\n\n\n\n(0,_modules_tel__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n;(0,_modules_maskPhone__WEBPACK_IMPORTED_MODULE_2__[\"default\"])('input[name=\"phone\"]')\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/maskPhone.js":
+/*!******************************!*\
+  !*** ./modules/maskPhone.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst maskPhone = (selector, masked = '+7 (___) ___-__-__') => {\n    const elems = document.querySelectorAll(selector);\n\n    function mask(event) {\n        const keyCode = event.keyCode;\n        const template = masked,\n            def = template.replace(/\\D/g, \"\"),\n            val = this.value.replace(/\\D/g, \"\");\n        let i = 0,\n            newValue = template.replace(/[_\\d]/g, function (a) {\n                return i < val.length ? val.charAt(i++) || def.charAt(i) : a;\n            });\n        i = newValue.indexOf(\"_\");\n        if (i != -1) {\n            newValue = newValue.slice(0, i);\n        }\n        let reg = template.substr(0, this.value.length).replace(/_+/g,\n            function (a) {\n                return \"\\\\d{1,\" + a.length + \"}\";\n            }).replace(/[+()]/g, \"\\\\$&\");\n        reg = new RegExp(\"^\" + reg + \"$\");\n        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {\n            this.value = newValue;\n        }\n        if (event.type == \"blur\" && this.value.length < 5) {\n            this.value = \"\";\n        }\n\n    }\n\n    for (const elem of elems) {\n        elem.addEventListener(\"input\", mask);\n        elem.addEventListener(\"focus\", mask);\n        elem.addEventListener(\"blur\", mask);\n    }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (maskPhone);\n\n//# sourceURL=webpack:///./modules/maskPhone.js?");
 
 /***/ }),
 
