@@ -3,6 +3,9 @@ const menu = () => {
     const menuItem = document.querySelectorAll('.popup-menu-nav__item>a')
     const menuAllService = document.querySelectorAll('.allservice')
     const allServiceModal = document.querySelector('.popup-repair-types')
+    const privacy = document.querySelectorAll('span.link-privacy')
+    const modalPrivacy = document.querySelector('.popup-privacy')
+
 
 
     document.addEventListener('click', (e) => {
@@ -34,6 +37,7 @@ const menu = () => {
         }
         if (e.target.closest('div>.mobile-hide')) {
             allServiceModal.removeAttribute('style')
+            modalPrivacy.removeAttribute('style')
         }
         menuAllService.forEach(item => {
             if (e.target === item) {
@@ -41,6 +45,11 @@ const menu = () => {
                 allServiceModal.style.zIndex = '99999'
                 allServiceModal.style.visibility = 'visible'
                 menu.removeAttribute('style')
+            }
+        })
+        privacy.forEach(item => {
+            if (e.target === item) {
+                modalPrivacy.style.visibility = 'visible'
             }
         })
     })
