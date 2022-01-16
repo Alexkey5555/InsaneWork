@@ -35,7 +35,7 @@ const menu = () => {
                 behavior: 'smooth'
             });
         }
-        if (e.target.closest('div>.mobile-hide')) {
+        if (e.target.closest('div>.close')) {
             allServiceModal.removeAttribute('style')
             modalPrivacy.removeAttribute('style')
         }

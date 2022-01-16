@@ -1268,6 +1268,7 @@ template, [hidden] {
     background: url("../images/formula/item_icon.svg");
     background-size: contain;
     cursor: pointer;
+   
 }
 
 .formula-item__icon-inner {
@@ -1326,10 +1327,12 @@ template, [hidden] {
     -webkit-transform: translate3d(0, -5px, 0);
     transform: translate3d(0, -5px, 0);
     opacity: 0.1;
+   
 }
 
 .formula-item-popup p {
     padding-bottom: 15px;
+
 }
 
 @media (max-width: 1024px) {
@@ -1382,10 +1385,14 @@ template, [hidden] {
     height: 100%;
     content: '';
     background: url("../images/formula/item_popup_1.svg") no-repeat;
-    background-size: contain;
+        background-size: contain;
     z-index: -1;
 }
+.popup-rotate .formula-item-popup:before {
+ -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 
+}
 .formula-item-popup-02 {
     min-height: 191px;
 }
@@ -7990,6 +7997,7 @@ div.wave-block:nth-child(17):after {
 .active-item {
     font-size: 20px;
     opacity: 1;
+    
 }
 
 .active-item .formula-item__icon {
@@ -8044,6 +8052,7 @@ div.wave-block:nth-child(17):after {
 .active-item .formula-item-popup {
     visibility: visible;
     opacity: 1;
+    
 }
 
 .active-item-partners {
