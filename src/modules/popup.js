@@ -1,10 +1,21 @@
 const popup = () => {
 
-
     const icon = document.querySelectorAll('.formula-item__icon')
+    const formulaIcon = document.querySelectorAll('.formula-slider__slide')
+    formulaIcon.forEach(item => {
+        document.addEventListener('touchstart', (e) => {
+            if (e.target === item) {
+                item.childNodes[1].classList.add('active-item')
+                item.style.opacity = '1';
+            }
+            else {
+                item.childNodes[1].classList.remove('active-item')
+                item.style.opacity = '0.4';
+            }
+        })
+    })
 
     icon.forEach(item => {
-
         item.addEventListener('mouseover', (e) => {
 
             let top = e.target.getBoundingClientRect().top
@@ -20,7 +31,6 @@ const popup = () => {
                `
                 e.target.parentElement.classList.add('active-item')
             }
-
             e.target.parentElement.classList.add('active-item')
         })
         item.addEventListener('mouseout', (e) => {
@@ -29,11 +39,5 @@ const popup = () => {
             e.target.parentElement.firstElementChild.removeAttribute('style')
         })
     })
-
-
-
-
-
-
 }
 export default popup
