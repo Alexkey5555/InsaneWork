@@ -50,6 +50,7 @@ const menu = () => {
         privacy.forEach(item => {
             if (e.target === item) {
                 modalPrivacy.style.visibility = 'visible'
+                console.log(item);
             }
         })
     })

@@ -66,7 +66,7 @@ const slider = () => {
             btnLeft.style.display = 'flex'
         }
         if (pixel === -704) {
-            console.log('ok');
+
             btnRight.style.display = 'none';
         }
         slides[0].style.marginLeft = pixel + 'px'
