@@ -8,6 +8,7 @@ import slider from './modules/slider'
 import documents from './modules/documents'
 import consultation from './modules/consult'
 import accordion from './modules/accordion'
+import send from './modules/sendForm'
 
 
 
@@ -21,3 +22,4 @@ slider()
 documents()
 consultation()
 accordion()
+send()
