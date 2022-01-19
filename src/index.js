@@ -7,6 +7,7 @@ import repair from './modules/repair'
 import slider from './modules/slider'
 import documents from './modules/documents'
 import consultation from './modules/consult'
+import accordion from './modules/accordion'
 
 
 
@@ -19,3 +20,4 @@ repair()
 slider()
 documents()
 consultation()
+accordion()
