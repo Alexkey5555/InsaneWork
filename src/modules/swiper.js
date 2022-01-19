@@ -18,7 +18,8 @@ const swiper = () => {
     const formulaHide = document.querySelector('.formula-slider-wrap')
     formulaHide.style.overflow = 'hidden';
     const row = document.querySelector('.transparency-slider')
-
+    const review = document.querySelector('.reviews-slider')
+    review.style.overflow = 'visible'
 
     if (width <= 1024) {
         const swiper2 = new Swiper('.repair-types-nav', {
@@ -39,8 +40,16 @@ const swiper = () => {
                 prevEl: ".slider-arrow_left",
             },
         })
-    }
 
+    }
+    const swiper4 = new Swiper('.reviews-slider-wrap', {
+        slidesPerView: 1,
+        spaceBetween: 1200,
+        navigation: {
+            nextEl: ".slider-arrow_right",
+            prevEl: ".slider-arrow_left",
+        },
+    })
 
 
 }
