@@ -9,6 +9,7 @@ import documents from './modules/documents'
 import consultation from './modules/consult'
 import accordion from './modules/accordion'
 import send from './modules/sendForm'
+import upload from './modules/upload'
 
 
 
@@ -23,3 +24,4 @@ documents()
 consultation()
 accordion()
 send()
+upload()
