@@ -14,10 +14,9 @@ export const login = () => {
             if (user.length !== 0) {
                 if (user[0].name === input.value) {
                     if (user[0].password === pass.value) {
-
                         input.value = ''
                         check = true
-                        mode.setAuth(user[0].id, { auth: true })
+                        document.cookie = "auth=true"
                     }
                     else {
                         warning[1].style.display = 'block'
@@ -25,7 +24,6 @@ export const login = () => {
                     }
                     warning[0].style.display = 'none'
                 }
-
             }
             else {
                 input.value = ''

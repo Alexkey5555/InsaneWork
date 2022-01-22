@@ -1,9 +1,7 @@
 <script>
-	fetch(`http://localhost:3000/users?auth_like=true`).then(res => res.json()).then(data => {
-		if (data.length == 0) {
-			window.location.href = 'index.html'
-		}
-	})
+	if (!document.cookie.split(';').filter((item) => item.includes('auth=true')).length) {
+		window.location.href = 'index.html'
+	}
 </script>
 
 <html lang="ru">
