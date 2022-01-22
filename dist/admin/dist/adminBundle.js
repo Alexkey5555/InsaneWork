@@ -16,7 +16,7 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/login */ \"./admin/src/modules/login.js\");\n\n\n(0,_modules_login__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\n\n//# sourceURL=webpack://insanework/./admin/src/admin.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/login */ \"./admin/src/modules/login.js\");\n/* harmony import */ var _modules_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mode */ \"./admin/src/modules/mode.js\");\n\n\n\n\nwindow.mode = new _modules_mode__WEBPACK_IMPORTED_MODULE_1__.Mode\n;(0,_modules_login__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\n\n//# sourceURL=webpack://insanework/./admin/src/admin.js?");
 
 /***/ }),
 
@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst login = () => {\n    console.log('login');\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (login);\n\n//# sourceURL=webpack://insanework/./admin/src/modules/login.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _mode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mode */ \"./admin/src/modules/mode.js\");\n\n\nconst login = () => {\n    const form = document.getElementById('login')\n    const input = form.querySelector('#name')\n    const pass = form.querySelector('#type')\n    const warning = form.querySelectorAll('.text-warning')\n    let check = false\n\n    form.addEventListener('submit', (e) => {\n        e.preventDefault()\n        mode.checkUsers(input.value).then(user => {\n            if (user.length !== 0) {\n                if (user[0].name === input.value) {\n                    if (user[0].password === pass.value) {\n                        input.value = ''\n                        check = true\n                    }\n                    else {\n                        warning[1].style.display = 'block'\n                        pass.value = ''\n                    }\n                    warning[0].style.display = 'none'\n                }\n            }\n            else {\n                input.value = ''\n                warning[0].style.display = 'block'\n            }\n            if (check) {\n                window.location.href = 'table.html'\n            }\n        })\n    })\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (login);\n\n//# sourceURL=webpack://insanework/./admin/src/modules/login.js?");
+
+/***/ }),
+
+/***/ "./admin/src/modules/mode.js":
+/*!***********************************!*\
+  !*** ./admin/src/modules/mode.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Mode\": () => (/* binding */ Mode)\n/* harmony export */ });\nclass Mode {\n    checkUsers(str) {\n        return fetch(`http://localhost:3000/users?name_like=${str}`).then(res => res.json())\n    }\n    checkPass(pass) {\n        return fetch(`http://localhost:3000/users?password_like=${pass}`).then(res => res.json())\n    }\n}\n\n//# sourceURL=webpack://insanework/./admin/src/modules/mode.js?");
 
 /***/ })
 
