@@ -21,18 +21,19 @@ const upload = () => {
     fetch('./db/db.json')
         .then(res => res.json())
         .then(data => {
-            data.forEach(item => {
+
+            data.posts.forEach(item => {
                 arr = arr.concat(item.type)
-                if (data[0].type === item.type) {
+                if (data.posts[0].type === item.type) {
                     type1.push(item)
                 }
-                if (data[18].type === item.type) {
+                if (data.posts[18].type === item.type) {
                     type2.push(item)
                 }
-                if (data[35].type === item.type) {
+                if (data.posts[35].type === item.type) {
                     type3.push(item)
                 }
-                if (data[53].type === item.type) {
+                if (data.posts[53].type === item.type) {
                     type4.push(item)
                 }
             })
