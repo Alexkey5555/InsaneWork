@@ -1,4 +1,4 @@
-import login from "./modules/login"
+import { login } from "./modules/login"
 import { Mode } from './modules/mode'
 
 

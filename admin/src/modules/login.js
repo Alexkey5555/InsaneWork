@@ -1,6 +1,6 @@
 import { Mode } from "./mode"
 
-const login = () => {
+export const login = () => {
     const form = document.getElementById('login')
     const input = form.querySelector('#name')
     const pass = form.querySelector('#type')
@@ -10,11 +10,14 @@ const login = () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         mode.checkUsers(input.value).then(user => {
+
             if (user.length !== 0) {
                 if (user[0].name === input.value) {
                     if (user[0].password === pass.value) {
+
                         input.value = ''
                         check = true
+                        mode.setAuth(user[0].id, { auth: true })
                     }
                     else {
                         warning[1].style.display = 'block'
@@ -22,6 +25,7 @@ const login = () => {
                     }
                     warning[0].style.display = 'none'
                 }
+
             }
             else {
                 input.value = ''
@@ -33,4 +37,3 @@ const login = () => {
         })
     })
 }
-export default login
