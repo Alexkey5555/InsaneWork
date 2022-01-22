@@ -16,7 +16,7 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/login */ \"./admin/src/modules/login.js\");\n/* harmony import */ var _modules_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mode */ \"./admin/src/modules/mode.js\");\n\n\n\n\nwindow.mode = new _modules_mode__WEBPACK_IMPORTED_MODULE_1__.Mode\n;(0,_modules_login__WEBPACK_IMPORTED_MODULE_0__.login)()\n\n//# sourceURL=webpack://insanework/./admin/src/admin.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/login */ \"./admin/src/modules/login.js\");\n/* harmony import */ var _modules_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mode */ \"./admin/src/modules/mode.js\");\n\n\n\n\n\nwindow.mode = new _modules_mode__WEBPACK_IMPORTED_MODULE_1__.Mode\n;(0,_modules_login__WEBPACK_IMPORTED_MODULE_0__.login)()\n\n\n//# sourceURL=webpack://insanework/./admin/src/admin.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Mode\": () => (/* binding */ Mode)\n/* harmony export */ });\nclass Mode {\n    checkUsers(str) {\n        return fetch(`http://localhost:3000/users?name_like=${str}`).then(res => res.json())\n    }\n\n}\n\n//# sourceURL=webpack://insanework/./admin/src/modules/mode.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Mode\": () => (/* binding */ Mode)\n/* harmony export */ });\nclass Mode {\n    checkUsers(str) {\n        return fetch(`http://localhost:3000/users?name_like=${str}`).then(res => res.json())\n    }\n    getRepair() {\n        return fetch('http://localhost:3000/posts').then(res => res.json())\n    }\n}\n\n//# sourceURL=webpack://insanework/./admin/src/modules/mode.js?");
 
 /***/ })
 

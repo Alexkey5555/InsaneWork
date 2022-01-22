@@ -2,6 +2,7 @@
 	if (!document.cookie.split(';').filter((item) => item.includes('auth=true')).length) {
 		window.location.href = 'index.html'
 	}
+
 </script>
 
 <html lang="ru">
@@ -12,6 +13,9 @@
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Управление базой данных</title>
 	<link rel="stylesheet" href="styles/index.css">
+	<script src='../dist/admin/table.js' defer></script>
+
+
 </head>
 
 <body>
@@ -23,9 +27,7 @@
 			<label>
 				<select name="typeItem" id="typeItem">
 					<option value="Все услуги">Все услуги</option>
-					<option value="Потолок: Демонтажные работы">Потолок: Демонтажные работы</option>
-					<option value="Потолок: Монтажные работы">Потолок: Монтажные работы</option>
-					<option value="Стены: Демонтажные работы">Стены: Демонтажные работы</option>
+
 				</select>
 				выбрать тип
 			</label>

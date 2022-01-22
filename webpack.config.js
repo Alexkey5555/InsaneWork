@@ -12,12 +12,19 @@ const main = {
 const admin = {
     entry: './admin/src/admin.js',
     output: {
-        filename: './admin/dist/adminBundle.js',
+        filename: './admin/adminBundle.js',
         publicPath: 'publicPath for admin'
     }
 };
+const table = {
+    entry: './admin/src/table.js',
+    output: {
+        filename: './admin/table.js',
+        publicPath: 'publicPath for table'
+    }
+};
 
-module.exports = [main, admin];
+module.exports = [main, admin, table];
 
 
 // const main = {
