@@ -1,5 +1,6 @@
 import { render } from './modules/render'
 import { list } from './modules/list'
+import { addRepair } from './modules/addRepair'
 
 import { Mode } from './modules/mode'
 
@@ -10,3 +11,4 @@ mode.getRepair().then(data => {
 })
 
 list()
+addRepair()

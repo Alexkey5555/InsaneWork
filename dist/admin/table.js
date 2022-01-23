@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./admin/src/modules/addRepair.js":
+/*!****************************************!*\
+  !*** ./admin/src/modules/addRepair.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addRepair\": () => (/* binding */ addRepair)\n/* harmony export */ });\nconst addRepair = () => {\n\n    const modal = document.getElementById('modal')\n    document.addEventListener('click', (e) => {\n        e.preventDefault()\n        if (e.target.closest('.btn-addItem')) {\n            modal.style.display = 'flex'\n        }\n        if (e.target.closest('.button__close') || e.target.closest('.cancel-button')) {\n            modal.style.display = 'none'\n\n        }\n\n    })\n}\n\n//# sourceURL=webpack://insanework/./admin/src/modules/addRepair.js?");
+
+/***/ }),
+
 /***/ "./admin/src/modules/list.js":
 /*!***********************************!*\
   !*** ./admin/src/modules/list.js ***!
@@ -46,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./admin/src/modules/render.js\");\n/* harmony import */ var _modules_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/list */ \"./admin/src/modules/list.js\");\n/* harmony import */ var _modules_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/mode */ \"./admin/src/modules/mode.js\");\n\n\n\n\n\nwindow.mode = new _modules_mode__WEBPACK_IMPORTED_MODULE_2__.Mode\n\nmode.getRepair().then(data => {\n    ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data)\n})\n\n;(0,_modules_list__WEBPACK_IMPORTED_MODULE_1__.list)()\n\n\n//# sourceURL=webpack://insanework/./admin/src/table.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./admin/src/modules/render.js\");\n/* harmony import */ var _modules_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/list */ \"./admin/src/modules/list.js\");\n/* harmony import */ var _modules_addRepair__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addRepair */ \"./admin/src/modules/addRepair.js\");\n/* harmony import */ var _modules_mode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/mode */ \"./admin/src/modules/mode.js\");\n\n\n\n\n\n\nwindow.mode = new _modules_mode__WEBPACK_IMPORTED_MODULE_3__.Mode\n\nmode.getRepair().then(data => {\n    ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data)\n})\n\n;(0,_modules_list__WEBPACK_IMPORTED_MODULE_1__.list)()\n;(0,_modules_addRepair__WEBPACK_IMPORTED_MODULE_2__.addRepair)()\n\n\n//# sourceURL=webpack://insanework/./admin/src/table.js?");
 
 /***/ })
 
