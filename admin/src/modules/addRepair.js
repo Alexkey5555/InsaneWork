@@ -10,27 +10,31 @@ export const addRepair = () => {
     const inputUnits = form.querySelector('#units')
     const inputCost = form.querySelector('#cost')
 
-    mode.getRepair().then(data => {
+    mode.getRepairs().then(data => {
         form.addEventListener('submit', (e) => {
             e.preventDefault()
-            let count = data[data.length - 1].id
-            const repair = {
-                type: inputType.value,
-                name: inputName.value,
-                units: inputUnits.value,
-                cost: +inputCost.value,
-                id: count + 1
-            }
-            mode.addRepair(repair).then(() => {
-                mode.getRepair().then(repairs => {
-                    render(repairs)
+            if (!form.dataset.method) {
+                let count = +data[data.length - 1].id
+                const repair = {
+                    type: inputType.value,
+                    name: inputName.value,
+                    units: inputUnits.value,
+                    cost: +inputCost.value,
+                    id: count + 1
+                }
+                mode.addRepair(repair).then(() => {
+                    mode.getRepairs().then(repairs => {
+                        render(repairs)
+                    })
                 })
-            })
+            }
+
         })
 
         document.addEventListener('click', (e) => {
             if (e.target.closest('.btn-addItem')) {
                 modal.style.display = 'flex'
+                form.reset()
             }
             if (e.target.closest('.button__close')) {
                 modal.style.display = 'none'

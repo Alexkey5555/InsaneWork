@@ -7,7 +7,7 @@ export const render = (users) => {
 	// mode.getRepair().then(data => {
 	users.forEach(item => {
 		tbody.insertAdjacentHTML('beforeend', `
-                        <tr class="table__row">
+                        <tr class="table__row" data-key="${item.id}">
 							<td class="table__id table__cell">${item.id}</td>
 							<td class="table-type table__cell">${item.type}</td>
 							<td class="table-name table__cell">

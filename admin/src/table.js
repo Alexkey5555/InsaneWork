@@ -7,7 +7,7 @@ import { Mode } from './modules/mode'
 
 window.mode = new Mode
 
-mode.getRepair().then(data => {
+mode.getRepairs().then(data => {
     render(data)
 })
 

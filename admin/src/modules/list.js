@@ -15,7 +15,7 @@ export const list = () => {
         return result;
     }
 
-    mode.getRepair().then(data => {
+    mode.getRepairs().then(data => {
         data.forEach(item => {
             arr = arr.concat(item.type)
         })
@@ -30,7 +30,7 @@ export const list = () => {
             select.forEach(elem => {
                 const sel = elem.options[elem.selectedIndex]
                 if (sel.value === 'Все услуги') {
-                    mode.getRepair().then(repairs => {
+                    mode.getRepairs().then(repairs => {
                         render(repairs)
                     })
                 }
