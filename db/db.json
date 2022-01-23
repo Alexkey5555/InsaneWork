@@ -14,8 +14,8 @@
     },
     {
       "id": 3,
-      "name": "Pasha",
-      "password": "789",
+      "name": "user",
+      "password": "123456789",
       "auth": false
     }
   ],
