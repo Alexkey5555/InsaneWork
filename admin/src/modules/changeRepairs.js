@@ -9,6 +9,7 @@ export const changeRepairs = () => {
     const inputName = form.querySelector('#name')
     const inputUnits = form.querySelector('#units')
     const inputCost = form.querySelector('#cost')
+    const modalHeader = document.querySelectorAll('.modal__header')
 
     tbody.addEventListener('click', (e) => {
         if (e.target.closest('.action-change')) {
@@ -16,6 +17,9 @@ export const changeRepairs = () => {
             const id = tr.dataset.key
             mode.getRepair(id).then(repair => {
                 modal.style.display = 'flex'
+                modalHeader[0].style.display = 'none'
+
+                modalHeader[1].style.display = 'block'
                 inputType.value = repair.type
                 inputName.value = repair.name
                 inputUnits.value = repair.units

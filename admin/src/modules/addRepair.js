@@ -9,6 +9,8 @@ export const addRepair = () => {
     const inputName = form.querySelector('#name')
     const inputUnits = form.querySelector('#units')
     const inputCost = form.querySelector('#cost')
+    const modalHeader = document.querySelectorAll('.modal__header')
+
 
     mode.getRepairs().then(data => {
         form.addEventListener('submit', (e) => {
@@ -33,6 +35,8 @@ export const addRepair = () => {
 
         document.addEventListener('click', (e) => {
             if (e.target.closest('.btn-addItem')) {
+                modalHeader[1].style.display = 'none'
+                modalHeader[0].style.display = 'block'
                 modal.style.display = 'flex'
                 form.reset()
             }
