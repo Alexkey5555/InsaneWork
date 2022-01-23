@@ -1,8 +1,9 @@
 import { Mode } from "./mode"
+import { render } from './render'
+
 
 export const changeRepairs = () => {
     const tbody = document.getElementById('tbody')
-    const btnChange = document.querySelectorAll('.action-change')
     const modal = document.getElementById('modal')
     const form = document.querySelector('#add-repair')
     const inputType = form.querySelector('#type')
@@ -18,7 +19,6 @@ export const changeRepairs = () => {
             mode.getRepair(id).then(repair => {
                 modal.style.display = 'flex'
                 modalHeader[0].style.display = 'none'
-
                 modalHeader[1].style.display = 'block'
                 inputType.value = repair.type
                 inputName.value = repair.name

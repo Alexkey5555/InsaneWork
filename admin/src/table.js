@@ -2,6 +2,7 @@ import { render } from './modules/render'
 import { list } from './modules/list'
 import { addRepair } from './modules/addRepair'
 import { changeRepairs } from './modules/changeRepairs'
+import { removeRepair } from './modules/removeRepair'
 
 import { Mode } from './modules/mode'
 
@@ -14,3 +15,4 @@ mode.getRepairs().then(data => {
 list()
 addRepair()
 changeRepairs()
+removeRepair()

@@ -29,4 +29,9 @@ export class Mode {
             }
         }).then(res => res.json())
     }
+    removeRepair(id) {
+        return fetch(`http://localhost:3000/posts/${id}`, {
+            method: 'DELETE'
+        }).then(res => res.json())
+    }
 }
