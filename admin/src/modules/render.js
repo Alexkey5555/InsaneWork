@@ -1,12 +1,12 @@
 import { Mode } from "./mode"
 
-export const render = () => {
-    const tbody = document.getElementById('tbody')
+export const render = (users) => {
+	const tbody = document.getElementById('tbody')
 
-    tbody.innerHTML = ''
-    mode.getRepair().then(data => {
-        data.forEach(item => {
-            tbody.insertAdjacentHTML('beforeend', `
+	tbody.innerHTML = ''
+	// mode.getRepair().then(data => {
+	users.forEach(item => {
+		tbody.insertAdjacentHTML('beforeend', `
                         <tr class="table__row">
 							<td class="table__id table__cell">${item.id}</td>
 							<td class="table-type table__cell">${item.type}</td>
@@ -35,6 +35,6 @@ export const render = () => {
 							</td>
 						</tr>
 `)
-        })
-    })
+	})
+	// })
 }

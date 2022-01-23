@@ -1,3 +1,6 @@
+import { render } from './render'
+
+
 export const list = () => {
     const select = document.querySelectorAll('#typeItem')
     let arr = []
@@ -26,7 +29,11 @@ export const list = () => {
         select[0].addEventListener('change', (e) => {
             select.forEach(elem => {
                 const sel = elem.options[elem.selectedIndex]
-                console.log(sel.textContent);
+
+                mode.filter(sel.textContent).then(post => {
+                    render(post)
+                })
+
             })
         })
     })

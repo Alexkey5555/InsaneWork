@@ -5,4 +5,7 @@ export class Mode {
     getRepair() {
         return fetch('http://localhost:3000/posts').then(res => res.json())
     }
+    filter(str) {
+        return fetch(`http://localhost:3000/posts?type=${str}`).then(res => res.json())
+    }
 }
