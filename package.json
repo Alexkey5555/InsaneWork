@@ -1,0 +1,22 @@
+{
+  "name": "insanework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "admin": "admin.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development ",
+    "server": "json-server --watch db/db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "swiper": "^7.4.1"
+  }
+}
