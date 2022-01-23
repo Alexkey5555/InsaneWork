@@ -29,11 +29,18 @@ export const list = () => {
         select[0].addEventListener('change', (e) => {
             select.forEach(elem => {
                 const sel = elem.options[elem.selectedIndex]
+                if (sel.value === 'Все услуги') {
+                    mode.getRepair().then(repairs => {
+                        render(repairs)
+                    })
+                }
+                else {
 
-                mode.filter(sel.textContent).then(post => {
-                    render(post)
-                })
 
+                    mode.filter(sel.textContent).then(post => {
+                        render(post)
+                    })
+                }
             })
         })
     })
