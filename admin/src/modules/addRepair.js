@@ -23,7 +23,7 @@ export const addRepair = () => {
             }
             mode.addRepair(repair).then(() => {
                 mode.getRepair().then(repairs => {
-                    console.log(repairs);
+                    render(repairs)
                 })
             })
         })
