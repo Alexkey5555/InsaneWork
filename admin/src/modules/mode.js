@@ -8,4 +8,13 @@ export class Mode {
     filter(str) {
         return fetch(`http://localhost:3000/posts?type=${str}`).then(res => res.json())
     }
+    addRepair(repair) {
+        return fetch('http://localhost:3000/posts', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(repair)
+        }).then(res => res.json())
+    }
 }

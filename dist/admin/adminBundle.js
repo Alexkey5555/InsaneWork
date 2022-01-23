@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Mode\": () => (/* binding */ Mode)\n/* harmony export */ });\nclass Mode {\n    checkUsers(str) {\n        return fetch(`http://localhost:3000/users?name_like=${str}`).then(res => res.json())\n    }\n    getRepair() {\n        return fetch('http://localhost:3000/posts').then(res => res.json())\n    }\n    filter(str) {\n        return fetch(`http://localhost:3000/posts?type=${str}`).then(res => res.json())\n    }\n}\n\n//# sourceURL=webpack://insanework/./admin/src/modules/mode.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Mode\": () => (/* binding */ Mode)\n/* harmony export */ });\nclass Mode {\n    checkUsers(str) {\n        return fetch(`http://localhost:3000/users?name_like=${str}`).then(res => res.json())\n    }\n    getRepair() {\n        return fetch('http://localhost:3000/posts').then(res => res.json())\n    }\n    filter(str) {\n        return fetch(`http://localhost:3000/posts?type=${str}`).then(res => res.json())\n    }\n    addRepair(repair) {\n        return fetch('http://localhost:3000/posts', {\n            method: \"POST\",\n            headers: {\n                \"Content-type\": \"application/json\",\n            },\n            body: JSON.stringify(repair)\n        }).then(res => res.json())\n    }\n}\n\n//# sourceURL=webpack://insanework/./admin/src/modules/mode.js?");
 
 /***/ })
 
