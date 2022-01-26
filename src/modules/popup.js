@@ -2,6 +2,7 @@ const popup = () => {
 
     const icon = document.querySelectorAll('.formula-item__icon')
     const formulaIcon = document.querySelectorAll('.formula-slider__slide')
+
     formulaIcon.forEach(item => {
         document.addEventListener('touchstart', (e) => {
             if (e.target === item) {
